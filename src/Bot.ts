@@ -1,13 +1,22 @@
-import { Client } from "discord.js";
+import {Client} from "discord.js";
 
-const token: string = "MTExNDI4NTcyNjgzODgyMTAwNA.G98yJp.cA3glx7J-MAXZKURyl-bX1mIRu_5tHjS3QIHLc";
+export class Bot {
+    public Bot() {
+        // Add Token here
+        const token: string = "";
 
-console.log("Bot is starting...");
+        console.log("Bot is starting...");
+        if(token.length === 0){
+            console.log("Please enter a token before running the app.");
+            return;
+        }
 
-const client = new Client({
-    intents: []
-});
+        const client = new Client({
+            intents: []
+        });
 
-client.login(token);
+        client.login(token);
 
-console.log(client);
+        console.log(client);
+    }
+}
