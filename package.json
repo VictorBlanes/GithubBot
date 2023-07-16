@@ -4,7 +4,8 @@
   "description": "A bot for Discord, duh.",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node src/Bot.ts"
+    "start": "ts-node src/starter.ts",
+    "deploy-commands": "ts-node src/deploy-commands.ts"
   },
   "author": "",
   "license": "ISC",
