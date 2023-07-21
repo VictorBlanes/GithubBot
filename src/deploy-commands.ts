@@ -3,14 +3,14 @@ import {REST, Routes} from "discord.js";
 import {clientId, guildId, token} from "src/shared/config.json";
 import path from "node:path";
 
-const commands = [];
+const commands: any[] = [];
 // Grab all the command files from the commands directory you created earlier
 
-const commandsPath = path.join(__dirname, 'commands');
-const commandFiles = fs.readdirSync(commandsPath).filter((file: any) => file.endsWith('.ts'));
+const commandsPath: string = path.join(__dirname, 'commands');
+const commandFiles: string[] = fs.readdirSync(commandsPath).filter((file: string) => file.endsWith('.ts'));
 
 for (const file of commandFiles) {
-    const filePath = path.join(commandsPath, file);
+    const filePath: string = path.join(commandsPath, file);
     const command = require(filePath);
     if ('data' in command && 'execute' in command) {
         commands.push(command.data.toJSON());
@@ -20,7 +20,7 @@ for (const file of commandFiles) {
 }
 
 // Construct and prepare an instance of the REST module
-const rest = new REST().setToken(token);
+const rest: REST = new REST().setToken(token);
 
 // and deploy your commands!
 (async () => {
@@ -29,7 +29,7 @@ const rest = new REST().setToken(token);
         console.log(`Started refreshing ${commands.length} application (/) commands.`);
 
         // The put method is used to fully refresh all commands in the guild with the current set
-        const data = await rest.put(
+        const data: any = await rest.put(
             Routes.applicationGuildCommands(clientId, guildId),
             {body: commands},
         );
