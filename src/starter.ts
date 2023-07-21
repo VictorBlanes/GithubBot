@@ -3,7 +3,7 @@ import {Collection} from "discord.js";
 const fs = require('node:fs');
 const path = require('node:path');
 const {Client, Events, GatewayIntentBits} = require('discord.js');
-const config = require("../config.json");
+const config = require("./shared/config.json");
 
 console.log("Bot is starting...");
 if (config.token.length === 0) {
