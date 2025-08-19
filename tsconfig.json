@@ -24,7 +24,8 @@
     "src/starter.ts"
   ],
   "include": [
-    "./**/*.ts"
+    "./**/*.ts",
+    "src/shared/config.json"
   ],
   "exclude": [
     "node_modules",

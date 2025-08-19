@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import {REST, Routes} from "discord.js";
-import {clientId, guildId, token} from "src/shared/config.json";
+import {clientId, guildId, token} from "./shared/config.json";
 import path from "node:path";
 
 const commands: any[] = [];
